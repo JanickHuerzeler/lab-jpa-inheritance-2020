@@ -1,9 +1,11 @@
 package ch.fhnw.jpa.inheritance;
 
+import javax.persistence.Basic;
 import javax.persistence.Entity;
 
 @Entity
 public class Post extends Topic {
+	@Basic(optional=false)
 	private String content;
 
 	protected Post() {
