@@ -25,11 +25,11 @@ public class Test implements CommandLineRunner {
 	@Transactional
 	public void run(String... args) throws Exception {
 		test1();
-		// test2();
+		test2();
 	}
 
 	private void test1() {
-		Post p = new Post("First Post", "Dominik", "I am the content");		
+		Post p = new Post("First Post", "Dominik", "I am the content");
 		Announcement a = new Announcement("First Announcement", "Dominik", LocalDate.now());
 		em.persist(p);
 		em.persist(a);
@@ -37,7 +37,7 @@ public class Test implements CommandLineRunner {
 
 	private void test2() {
 		TypedQuery<Topic> q = em.createQuery("SELECT t FROM Topic t", Topic.class);
-		for(Topic t : q.getResultList()) {
+		for (Topic t : q.getResultList()) {
 			System.out.println(t.getClass().getSimpleName());
 		}
 	}
