@@ -29,7 +29,7 @@ public class Test implements CommandLineRunner {
 	}
 
 	private void test1() {
-		Post p = new Post("First Post", "Dominik");
+		Post p = new Post("First Post", "Dominik", "I am the content");		
 		Announcement a = new Announcement("First Announcement", "Dominik", LocalDate.now());
 		em.persist(p);
 		em.persist(a);
